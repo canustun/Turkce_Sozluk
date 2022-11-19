@@ -1,15 +1,15 @@
 #Türkçe sözlük
 import requests as req
 from bs4 import BeautifulSoup
-import os
+from os  import system
 
 
 while True:
-    os.system("cls||clear")
-    kelime=input("********************\nKelimeyi giriniz :")
+    system("cls||clear")
+    kelime= input("********************\nKelimeyi giriniz :")
     kelime_ara=req.get(f"http://www.birsozluk.com/{kelime}")
     if len(kelime)<=1:
-        input("Daha uzun bi kelime girin! Tekrar denemek için boşluk tuşuna basınız!")
+        input("Daha uzun bi kelime giriniz! Tekrar denemek için boşluk tuşuna basınız!")
         continue
 
     kaynak = BeautifulSoup(kelime_ara.content,"html.parser")
